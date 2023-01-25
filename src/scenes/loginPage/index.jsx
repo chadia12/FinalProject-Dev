@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import Form from "./Form"; 
+import Form from "./Form";
 
 const LoginPage = () => {
   const theme = useTheme();
@@ -13,7 +13,7 @@ const LoginPage = () => {
         textAlign="center"
       >
         <Typography fontWeight="bold" fontSize="32px" color="primary">
-         FriendLink
+          FriendLink
         </Typography>
       </Box>
 

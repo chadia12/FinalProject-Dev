@@ -49,12 +49,15 @@ const Navbar = () => {
   const alt = theme.palette.background.alt;
 
   const handleSearch = async () => {
-    const response = await fetch(`https://friend-link.herokuapp.com/users/search`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      `https://friend-link.herokuapp.com/users/search`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     const data = await response.json();
     setSearch(data);
   };

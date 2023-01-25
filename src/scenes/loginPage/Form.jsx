@@ -79,11 +79,14 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://friend-link.herokuapp.com/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      "https://friend-link.herokuapp.com/auth/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
     if (loggedIn) {
@@ -248,18 +251,20 @@ const Form = () => {
               {isLogin ? "LOGIN" : "REGISTER"}
             </Button>
             <Typography
-            onClick= {() =>{
-              navigate("/forgotpass");
-            }}
-             sx={{
-              textDecoration: "underline",
-              color: palette.primary.main,
-              "&:hover": {
-                cursor: "pointer",
-                color: palette.primary.light,
-              },
-            }}
-            >Forgot password?</Typography>
+              onClick={() => {
+                navigate("/forgotpass");
+              }}
+              sx={{
+                textDecoration: "underline",
+                color: palette.primary.main,
+                "&:hover": {
+                  cursor: "pointer",
+                  color: palette.primary.light,
+                },
+              }}
+            >
+              Forgot password?
+            </Typography>
             <Typography
               onClick={() => {
                 setPageType(isLogin ? "register" : "login");
@@ -274,7 +279,6 @@ const Form = () => {
                 },
               }}
             >
-              
               {isLogin
                 ? "Don't have an account? Sign Up here."
                 : "Already have an account? Login here."}
