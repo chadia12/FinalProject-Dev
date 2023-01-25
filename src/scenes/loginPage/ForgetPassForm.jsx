@@ -39,7 +39,7 @@ const ForgetPassForm = () => {
 
   const handlePasswordSubmit = async (values) => {
     
-    const response = await fetch("http://localhost:3002/forgotpass",{
+    const response = await fetch("https://friend-link.herokuapp.com/forgotpass",{
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(values),
