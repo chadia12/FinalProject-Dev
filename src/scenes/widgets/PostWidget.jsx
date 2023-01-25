@@ -33,7 +33,7 @@ import {
    const likeCount = Object.keys(likes).length;
     const [isAddcommtbtn, setisAddcommtbtn] = useState(false)
    const [commentinput, setCommentInput] = useState({message:" "});
-   const [isDelete, setIsDelete] = useState(false);
+   const [isDelete, setIsDelete] = useState((postUserId == loggedInUserId));
    const { palette } = useTheme();
    const main = palette.neutral.main;
    const primary = palette.primary.main;
@@ -146,7 +146,7 @@ const handleDelete = async ()=>{
              <Typography>{comments.length}</Typography>
            </FlexBetween>
          </FlexBetween>
-         {isDelete =(postUserId == loggedInUserId) &&  
+         {isDelete  &&  
          <IconButton onClick={handleDelete}>
            < HighlightOffIcon />
          </IconButton>}
