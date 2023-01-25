@@ -29,13 +29,11 @@ import {
    const dispatch = useDispatch();
    const token = useSelector((state) => state.token);
    const loggedInUserId = useSelector((state) => state.user._id);
-
-  //  const posts = useSelector((state) => state.posts);
-
    const isLiked = Boolean(likes[loggedInUserId]);
    const likeCount = Object.keys(likes).length;
     const [isAddcommtbtn, setisAddcommtbtn] = useState(false)
    const [commentinput, setCommentInput] = useState({message:" "});
+   const [isDelete, setIsDelete] = useState(false);
    const { palette } = useTheme();
    const main = palette.neutral.main;
    const primary = palette.primary.main;
@@ -148,9 +146,10 @@ const handleDelete = async ()=>{
              <Typography>{comments.length}</Typography>
            </FlexBetween>
          </FlexBetween>
+         {isDelete =(postUserId == loggedInUserId) &&  
          <IconButton onClick={handleDelete}>
            < HighlightOffIcon />
-         </IconButton>
+         </IconButton>}
        </FlexBetween>
        {isComments && (
          <Box mt="0.5rem">
